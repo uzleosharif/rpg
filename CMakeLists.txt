@@ -65,9 +65,11 @@ option(ENABLE_TESTING "Enable Test Builds" ON)
 option(ENABLE_FUZZING "Enable Fuzzing Builds" ON)
 
 find_package(spdlog REQUIRED)
+find_package(imgui REQUIRED)
+find_package(SFML REQUIRED)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog)
+target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog imgui::imgui sfml::sfml)
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 
 if(LIST_OF_SANITIZERS)
@@ -79,7 +81,6 @@ if(LIST_OF_SANITIZERS)
     target_link_libraries(${PROJECT_NAME} PRIVATE -fsanitize=${LIST_OF_SANITIZERS})
   endif()
 endif()
-
 
 if(ENABLE_TESTING)
   enable_testing()

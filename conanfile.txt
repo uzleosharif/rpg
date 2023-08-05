@@ -3,6 +3,8 @@ doxygen/1.9.4
 
 [requires]
 spdlog/1.12.0
+imgui/1.89.7-docking
+sfml/2.5.1
 
 [generators]
 CMakeDeps

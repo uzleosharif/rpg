@@ -26,3 +26,6 @@ $ cmake --build <build> --config Release
 # the executable rpg should be found in <build>/Release/
 ```
 
+## Usage
+
+### Pre-requisite
